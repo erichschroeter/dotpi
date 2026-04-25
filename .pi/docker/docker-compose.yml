@@ -1,0 +1,25 @@
+services:
+  pi:
+    build:
+      context: ../..
+      dockerfile: .pi/docker/Dockerfile
+
+    volumes:
+      - ../..:/app
+      - ~/.pi:/root/.pi
+
+    environment:
+      - ANTHROPIC_API_KEY
+      - OPENAI_API_KEY
+      - GOOGLE_GENERATIVE_AI_API_KEY
+
+    ports:
+      - "8085:8085"
+
+    stdin_open: true
+    tty: true
+
+    working_dir: /app
+
+    command: ["-e", ".pi/extensions/damage-control.ts"]
+
