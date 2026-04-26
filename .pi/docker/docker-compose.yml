@@ -21,5 +21,4 @@ services:
 
     working_dir: /app
 
-    command: ["-e", ".pi/extensions/damage-control.ts"]
 
