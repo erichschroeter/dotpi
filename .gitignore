@@ -7,6 +7,8 @@
 .pi/tmp/
 .pi/history/
 .pi/outputs/
+# Use .pi/profiles/XXX/settings.json
+.pi/settings.json
 
 # optional local overrides
 .pi/.env

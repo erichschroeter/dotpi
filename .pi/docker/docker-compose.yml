@@ -7,11 +7,14 @@ services:
     volumes:
       - ../..:/app
       - ~/.pi:/root/.pi
+      - ../profiles/${PI_PROFILE:-default}/settings.json:/app/.pi/settings.json
 
     environment:
       - ANTHROPIC_API_KEY
       - OPENAI_API_KEY
+      - GEMINI_API_KEY
       - GOOGLE_GENERATIVE_AI_API_KEY
+      - PI_PROFILE
 
     ports:
       - "8085:8085"
