@@ -1,12 +1,12 @@
-# Project Name
+# Personal .pi configuration
 
-Short description of the project.
+Intended to be used within existing projects.
 
 ---
 
-## Development (pi.dev)
+## Setup
 
-This project uses `pi.dev` inside Docker for a safe, isolated development agent.
+This project uses `Pi` inside Docker for a safe, isolated development agent.
 
 ### Prerequisites
 
@@ -15,9 +15,10 @@ This project uses `pi.dev` inside Docker for a safe, isolated development agent.
 - At least one API key set in your environment:
   - `OPENAI_API_KEY`
   - `ANTHROPIC_API_KEY`
+  - `GEMINI_API_KEY`
   - or `GOOGLE_GENERATIVE_AI_API_KEY`
 
-### Setup
+### Build Docker container
 
 From the project root:
 
@@ -25,17 +26,23 @@ From the project root:
 docker compose -f .pi/docker/docker-compose.yml build
 ```
 
-### Start pi.dev in interactive mode
+### Start Pi in interactive mode
 
-This will launch the pi.dev agent CLI inside the container using the `default` profile:
+This will launch the Pi agent CLI inside the container using the `default` profile:
 
 ```bash
 docker compose -f .pi/docker/docker-compose.yml run --rm pi
 ```
 
-To use a different profile (e.g., `my_custom` that maps to `.pi/profiles/my_custom/`), set the `PI_PROFILE` environment variable:
+To use a different profile (e.g., `my_custom` that maps to `profiles/my_custom/`), set the `PI_PROFILE` environment variable:
 
 ```bash
-PI_PROFILE=my_custom docker compose -f .pi/docker/docker-compose.yml run --rm pi
+PI_PROFILE=my_custom docker compose -f docker/docker-compose.yml run --rm pi
+```
+
+Or with extensions:
+
+```bash
+docker compose -f docker/docker-compose.yml run --rm pi -e .pi/extensions/available/purpose-gate.ts
 ```
 

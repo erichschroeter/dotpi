@@ -1,0 +1,30 @@
+services:
+  pi:
+    build:
+      context: ../..
+      dockerfile: .pi/docker/Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+
+    volumes:
+      - ../..:/app
+      - ${HOME:-~}/.pi:/home/pi/.pi
+      - ${HOME:-~}/.agents:/home/pi/.agents
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /opt/BradyRD/hydra:/opt/BradyRD/hydra
+
+    environment:
+      - ANTHROPIC_API_KEY
+      - OPENAI_API_KEY
+      - GEMINI_API_KEY
+      - GOOGLE_GENERATIVE_AI_API_KEY
+      - PI_PROFILE
+      - DISPLAY=$DISPLAY
+
+    stdin_open: true
+    tty: true
+
+    working_dir: /app
+
+

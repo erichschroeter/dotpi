@@ -1,18 +1,20 @@
 # -------------------------
 # pi.dev runtime artifacts
 # -------------------------
-.pi/cache/
-.pi/state/
-.pi/logs/
-.pi/tmp/
-.pi/history/
-.pi/outputs/
-# Use .pi/profiles/XXX/settings.json
-.pi/settings.json
+cache/
+state/
+logs/
+tmp/
+history/
+outputs/
+agents/sessions/
+/.pi/
+# Use profiles/XXX/settings.json
+/settings.json
 
 # optional local overrides
-.pi/.env
-.pi/local.env
+.env
+local.env
 
 # -------------------------
 # OS noise

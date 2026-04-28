@@ -1,0 +1,7 @@
+{
+  "extensions": [
+    "extensions/available/team.ts"
+  ],
+  "defaultTeam": "pi-experts",
+  "teamView": "minimal"
+}

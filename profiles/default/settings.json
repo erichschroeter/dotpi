@@ -1,0 +1,10 @@
+{
+  "extensions": [
+    "extensions/available/agent-cost.ts",
+    "extensions/available/purpose-gate.ts",
+    "extensions/available/team.ts"
+  ],
+  "defaultTeam": "pi-experts",
+  "teamView": "minimal",
+  "teamTmux": true
+}
