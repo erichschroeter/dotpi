@@ -1,1 +1,1 @@
-../../available/aepp-developer.md
+../aepp/aepp-developer.md

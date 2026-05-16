@@ -1,1 +1,0 @@
-../../available/yocto-scarthgap.md
